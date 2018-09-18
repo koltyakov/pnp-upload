@@ -1,5 +1,10 @@
 # SharePoint large files upload example using PnPjs
 
+## Supported SharePoint versions
+
+- SharePoint Online
+- SharePoint On-Prem (2019/2016)
+
 ## Dependencies
 
 ```bash
@@ -22,6 +27,12 @@ Provide SharePoint credentials during first execution.
 ## Upload method
 
 PnPjs's `.addChunked` API implementation is used for uploading a large document in chunks.
+
+## Authentication
+
+A variety of different authentication strategies are covered using `node-sp-auth` library.
+
+`pnp-auth` Node.js fetch client is used to proxy all available auth strategies.
 
 ## Usage sample
 
