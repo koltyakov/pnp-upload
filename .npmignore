@@ -1,0 +1,12 @@
+!dist/
+config/
+src/
+test/
+examples/
+docs/
+docker/
+.github/
+.vscode/
+.eslintrc
+tslconfig.json
+tslint.json

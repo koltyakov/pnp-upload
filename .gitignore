@@ -1,0 +1,5 @@
+node_modules/
+config/**/private.*
+dist/
+debug.log
+npm-debug.*

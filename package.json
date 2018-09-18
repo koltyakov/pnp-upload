@@ -1,0 +1,46 @@
+{
+  "name": "pnp-upload",
+  "description": "SharePoint large files uploader using PnPjs",
+  "version": "0.0.1",
+  "main": "./dist/index.js",
+  "typings": "./dist/index",
+  "scripts": {
+    "build": "npm run tslint && rm -rf ./dist && tsc -p .",
+    "tslint": "tslint -p .",
+    "test": "ts-node ./test/upload.test.ts"
+  },
+  "keywords": [
+    "sharepoint",
+    "rest",
+    "pnp",
+    "upload"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/koltyakov/pnp-upload.git"
+  },
+  "author": "Andrew Koltyakov <andrew.koltyakov@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/koltyakov/pnp-upload/issues"
+  },
+  "homepage": "https://github.com/koltyakov/pnp-upload#readme",
+  "dependencies": {
+    "@pnp/common": "^1.2.1",
+    "@pnp/logging": "^1.2.1",
+    "@pnp/odata": "^1.2.1",
+    "@pnp/sp": "^1.2.1",
+    "node-sp-auth-config": "^2.5.6",
+    "pnp-auth": "0.0.3",
+    "progress": "^2.0.0",
+    "sp-pnp-node": "^2.1.3",
+    "stream-to-blob": "^1.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^10.10.0",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.11.0",
+    "tslint-config-standard": "^8.0.1",
+    "typescript": "^3.0.3"
+  }
+}
