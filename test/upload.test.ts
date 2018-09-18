@@ -16,7 +16,10 @@ new AuthConfig().getContext()
     let progress: ProgressBar = null;
     return upload.addChunked(folderRelativeUrl, filePath, data => {
       if (!progress) {
-        progress = new ProgressBar(`Uploading ${filePath} [:bar] ${data.fileSize} KB`, { total: data.totalBlocks });
+        progress = new ProgressBar(`Uploading ${filePath} [:bar] ${data.fileSize} KB`, {
+          total: data.totalBlocks,
+          width: 20
+        });
       }
       progress.tick();
     });
