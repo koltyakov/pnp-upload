@@ -5,8 +5,7 @@ import * as ProgressBar from 'progress';
 import { Upload } from '../src';
 
 const filePath = path.join(__dirname, './ReplaceWithLargeOne.avi');
-// const filePath = `D:\\Distrib\\ubuntu-16.04.2-server-amd64.iso`;
-const folderUrl = 'Shared Documents';
+const folderUrl = 'Shared Documents'; // Web relative target folder
 
 new AuthConfig().getContext()
   .then(context => {

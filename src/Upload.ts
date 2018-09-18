@@ -1,7 +1,7 @@
-import { sp, ChunkedFileUploadProgressData, FileAddResult } from '@pnp/sp';
 import * as fs from 'fs';
 import * as path from 'path';
-import { PnpNode } from 'sp-pnp-node';
+import { sp, ChunkedFileUploadProgressData, FileAddResult } from '@pnp/sp';
+import NodeFetchClient from 'pnp-auth/lib/NodeFetchClient';
 import { IAuthContext } from 'node-sp-auth-config';
 
 export class Upload {
@@ -9,9 +9,7 @@ export class Upload {
   constructor(context: IAuthContext) {
     sp.setup({
       sp: {
-        fetchClientFactory: () => {
-          return new PnpNode(context);
-        }
+        fetchClientFactory: () => new NodeFetchClient(context.authOptions, context.siteUrl)
       }
     });
   }
@@ -35,10 +33,11 @@ export class Upload {
         if (statErr) {
           return reject(statErr);
         }
-        fs.readFile(filePath, (err, buffer) => {
-          if (err) {
-            return reject(err);
+        fs.readFile(filePath, (readErr, buffer) => {
+          if (readErr) {
+            return reject(readErr);
           }
+          // This is required to tream Buffer the same way as Blob
           (buffer as any).size = stats.size;
           resolve(buffer);
         });

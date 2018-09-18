@@ -44,7 +44,3 @@ upload
   .then(_ => console.log('Done'))
   .catch(console.log);
 ```
-
-## Misc
-
-`sp-pnp-node` library is used temporary as NodeFetch client to make `PnPjs` works in Node.js environment. The lib will be replaced with `pnp-auth`. Currently, `pnp-auth` is required some tweeks due to PnPjs's internal changes to work with the latest version.

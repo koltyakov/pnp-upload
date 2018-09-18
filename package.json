@@ -1,7 +1,7 @@
 {
   "name": "pnp-upload",
   "description": "SharePoint large files uploader using PnPjs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "./dist/index.js",
   "typings": "./dist/index",
   "scripts": {
@@ -26,14 +26,10 @@
   },
   "homepage": "https://github.com/koltyakov/pnp-upload#readme",
   "dependencies": {
-    "@pnp/common": "^1.2.1",
-    "@pnp/logging": "^1.2.1",
-    "@pnp/odata": "^1.2.1",
-    "@pnp/sp": "^1.2.1",
+    "@pnp/pnpjs": "^1.2.1",
     "node-sp-auth-config": "^2.5.6",
-    "pnp-auth": "0.0.3",
+    "pnp-auth": "0.0.4",
     "progress": "^2.0.0",
-    "sp-pnp-node": "^2.1.3",
     "stream-to-blob": "^1.0.1"
   },
   "devDependencies": {
