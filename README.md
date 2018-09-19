@@ -1,4 +1,4 @@
-# SharePoint large files upload example using PnPjs
+# SharePoint: Large files upload example using PnPjs from Node.js
 
 ## Supported SharePoint versions
 
