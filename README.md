@@ -12,7 +12,7 @@ npm run install
 ```
 ## Test
 
-Replace `./test/ReplaceWithLargeOne.avi` with a large file to upload to SHarePoint.
+Replace `./test/ReplaceWithLargeOne.avi` with a large file to upload to SharePoint.
 
 In a console, run the following command:
 
