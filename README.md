@@ -1,3 +1,5 @@
+[![Build Status](https://koltyakov.visualstudio.com/SPNode/_apis/build/status/pnp-upload?branchName=master)](https://koltyakov.visualstudio.com/SPNode/_build/latest?definitionId=16&branchName=master)
+
 # SharePoint: Large files upload example using PnPjs from Node.js
 
 ## Supported SharePoint versions
