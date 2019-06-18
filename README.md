@@ -1,4 +1,4 @@
-# SharePoint large files upload example using PnPjs
+# SharePoint: Large files upload example using PnPjs from Node.js
 
 ## Supported SharePoint versions
 
@@ -8,11 +8,11 @@
 ## Dependencies
 
 ```bash
-npm run install
+npm install
 ```
 ## Test
 
-Replace `./test/ReplaceWithLargeOne.avi` with a large file to upload to SHarePoint.
+Replace `./test/ReplaceWithLargeOne.avi` with a large file to upload to SharePoint.
 
 In a console, run the following command:
 
