@@ -2,12 +2,14 @@
   "name": "pnp-upload",
   "description": "SharePoint large files uploader using PnPjs",
   "version": "0.0.2",
+  "private": true,
   "main": "./dist/index.js",
   "typings": "./dist/index",
   "scripts": {
     "build": "npm run tslint && rm -rf ./dist && tsc -p .",
     "tslint": "tslint -p .",
-    "test": "ts-node ./test/upload.test.ts"
+    "test": "ts-node ./test/manual/upload.ts",
+    "test:ci": "mocha --opts test/mocha.opts --ci || ECHO."
   },
   "keywords": [
     "sharepoint",
@@ -31,8 +33,11 @@
     "pnp-auth": "0.0.4"
   },
   "devDependencies": {
+    "@types/mocha": "^5.2.7",
     "@types/node": "^12.0.8",
     "@types/progress": "^2.0.3",
+    "dotenv": "^8.0.0",
+    "mocha": "^6.1.4",
     "progress": "^2.0.3",
     "ts-node": "^8.3.0",
     "tslint": "^5.17.0",
