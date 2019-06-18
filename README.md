@@ -8,7 +8,7 @@
 ## Dependencies
 
 ```bash
-npm run install
+npm install
 ```
 ## Test
 
