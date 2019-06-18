@@ -46,12 +46,12 @@ const folderRelativeUrl = `/${context.siteUrl.split('/').slice(3).join('/')}/${f
 
 let progress: ProgressBar = null;
 upload
-  .addChunked(folderRelativeUrl, filePath, data => {
+  .addChunked((folderRelativeUrl, filePath, data) => {
     if (!progress) {
       progress = new ProgressBar(`Uploading ${filePath} [:bar] ${data.fileSize} KB`, { total: data.totalBlocks });
     }
     progress.tick();
   })
-  .then(_ => console.log('Done'))
-  .catch(console.log);
+  .then(() => console.log('Done'))
+  .catch(console.warn);
 ```
