@@ -2,7 +2,6 @@
   "name": "pnp-upload",
   "description": "SharePoint large files uploader using PnPjs",
   "version": "1.0.0",
-  "private": true,
   "main": "./dist/index.js",
   "typings": "./dist/index",
   "scripts": {
