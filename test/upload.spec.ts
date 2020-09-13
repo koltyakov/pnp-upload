@@ -2,11 +2,11 @@ import * as Mocha from 'mocha';
 import * as path from 'path';
 import * as ProgressBar from 'progress';
 
-import { Upload } from '../../src';
-import { Environments } from '../configs';
-import { getAuth } from '../utils';
+import { Upload } from '../src';
+import { Environments } from './configs';
+import { getAuth } from './utils';
 
-const filePath = path.join(__dirname, '../ReplaceWithLargeOne.avi');
+const filePath = path.join(__dirname, 'ReplaceWithLargeOne.avi');
 const folderUrl = 'Shared Documents'; // Web relative target folder
 
 describe(`pnp-upload tests`, () => {

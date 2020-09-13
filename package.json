@@ -9,7 +9,7 @@
     "clean": "rimraf ./dist",
     "lint": "tslint -p .",
     "test": "ts-node ./test/manual/upload.ts",
-    "test:ci": "mocha --opts test/mocha.opts --ci || ECHO."
+    "test:ci": "mocha --config ./test/.mocharc.json --ci || ECHO."
   },
   "keywords": [
     "sharepoint",
