@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import { sp, ChunkedFileUploadProgressData, FileAddResult } from '@pnp/sp';
+import { sp, IFileAddResult, IFileUploadProgressData } from '@pnp/sp-commonjs/presets/all';
 import NodeFetchClient from 'pnp-auth/lib/NodeFetchClient';
 import { IAuthContext } from 'node-sp-auth-config';
 
@@ -17,8 +17,8 @@ export class Upload {
   public addChunked(
     folderRelativeUrl: string,
     filePath: string,
-    progress?: (data: ChunkedFileUploadProgressData) => void
-  ): Promise<FileAddResult> {
+    progress?: (data: IFileUploadProgressData) => void
+  ): Promise<IFileAddResult> {
     const fileName = path.parse(filePath).name + path.parse(filePath).ext;
     return this.readFile(filePath)
       .then(content => {
