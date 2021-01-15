@@ -45,7 +45,7 @@ export class Upload {
     const rs = fs.createReadStream(filePath, { highWaterMark: chunkSize }); // highWaterMark must be equal to chunkSize
 
     return this.web.getFolderByServerRelativeUrl(folderRelativeUrl)
-      .files.addChunked(fileName, rs, ticker, true, chunkSize)
+      .files.addChunked(fileName, rs, ticker, true, chunkSize);
   }
 
 }
