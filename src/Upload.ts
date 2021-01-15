@@ -28,7 +28,7 @@ export class Upload {
     chunkSize = 10485760
   ): Promise<IFileAddResult> {
 
-    let ticker: (data: IFileUploadProgressData) => void = 'function' === typeof progress ? (() => {
+    const ticker: (data: IFileUploadProgressData) => void = 'function' === typeof progress ? (() => {
       const stats = fs.statSync(filePath);
       // In a stream object there is no `size` property, so IFileUploadProgressData object can't know
       // `fileSize` and `totalBlocks` without externally provided size received e.g. with fs.stat.
