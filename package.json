@@ -28,7 +28,9 @@
   },
   "homepage": "https://github.com/koltyakov/pnp-upload#readme",
   "dependencies": {
-    "@pnp/pnpjs-commonjs": "^2.0.13",
+    "@pnp/nodejs": "^2.1.0",
+    "@pnp/nodejs-commonjs": "^2.1.0",
+    "@pnp/pnpjs-commonjs": "^2.1.0",
     "node-sp-auth-config": "^3.0.1",
     "pnp-auth": "^2.0.0"
   },
