@@ -28,6 +28,16 @@ export class Upload {
     chunkSize = 10485760
   ): Promise<IFileAddResult> {
 
+    const fileName = path.parse(filePath).name + path.parse(filePath).ext;
+
+    // When file is smaller than defined chunk
+    const stats = fs.statSync(filePath);
+    if (stats.size <= chunkSize) {
+      return this.web.getFolderByServerRelativeUrl(folderRelativeUrl)
+        .files.add(fileName, fs.readFileSync(filePath), true);
+    }
+
+    // Progress ticker callback
     const ticker: (data: IFileUploadProgressData) => void = 'function' === typeof progress ? (() => {
       const stats = fs.statSync(filePath);
       // In a stream object there is no `size` property, so IFileUploadProgressData object can't know
@@ -41,9 +51,8 @@ export class Upload {
       };
     })() : null;
 
-    const fileName = path.parse(filePath).name + path.parse(filePath).ext;
+    // Chunked stream upload
     const rs = fs.createReadStream(filePath, { highWaterMark: chunkSize }); // highWaterMark must be equal to chunkSize
-
     return this.web.getFolderByServerRelativeUrl(folderRelativeUrl)
       .files.addChunked(fileName, rs, ticker, true, chunkSize);
   }

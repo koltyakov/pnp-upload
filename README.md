@@ -50,7 +50,7 @@ let progress: ProgressBar = null;
 upload
   .addChunked(folderRelativeUrl, filePath, (data) => {
     if (!progress) {
-      progress = new ProgressBar(`Uploading ${filePath} [:bar] ${data.fileSize} KB`, { total: data.totalBlocks });
+      progress = new ProgressBar(`Uploading ${filePath} [:bar] ${data.fileSize} B`, { total: data.totalBlocks });
     }
     progress.tick();
   })

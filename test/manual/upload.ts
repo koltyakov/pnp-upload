@@ -1,6 +1,7 @@
 import * as path from 'path';
 import { AuthConfig } from 'node-sp-auth-config';
 import * as ProgressBar from 'progress';
+import * as filesize from 'filesize';
 
 import { Upload } from '../../src';
 
@@ -16,7 +17,7 @@ new AuthConfig().getContext()
     let progress: ProgressBar = null;
     return upload.addChunked(folderRelativeUrl, filePath, (data) => {
       if (!progress) {
-        progress = new ProgressBar(`Uploading ${filePath} [:bar] ${data.fileSize} KB`, {
+        progress = new ProgressBar(`Uploading ${filePath} [:bar] ${filesize(data.fileSize)}`, {
           total: data.totalBlocks,
           width: 20
         });

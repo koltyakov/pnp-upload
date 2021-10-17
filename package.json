@@ -9,6 +9,7 @@
     "clean": "rimraf ./dist",
     "lint": "tsc --noEmit && eslint \"*/**/*.{js,ts}\" --quiet --fix",
     "test": "ts-node ./test/manual/upload.ts",
+    "test:m": "mocha --config ./test/.mocharc.json || ECHO.",
     "test:ci": "mocha --config ./test/.mocharc.json --ci || ECHO."
   },
   "keywords": [
@@ -31,6 +32,7 @@
     "@pnp/nodejs": "^2.10.0",
     "@pnp/nodejs-commonjs": "^2.10.0",
     "@pnp/pnpjs-commonjs": "^2.10.0",
+    "filesize": "^8.0.3",
     "node-sp-auth-config": "^3.0.1",
     "pnp-auth": "^2.0.0"
   },

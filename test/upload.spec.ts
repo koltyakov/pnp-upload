@@ -1,6 +1,7 @@
 import * as Mocha from 'mocha';
 import * as path from 'path';
 import * as ProgressBar from 'progress';
+import * as filesize from 'filesize';
 
 import { Upload } from '../src';
 import { Environments } from './configs';
@@ -22,7 +23,7 @@ describe('pnp-upload tests', () => {
         let progress: ProgressBar = null;
         await upload.addChunked(folderRelativeUrl, filePath, (data) => {
           if (!progress) {
-            progress = new ProgressBar(`Uploading ${filePath} [:bar] ${data.fileSize} KB`, {
+            progress = new ProgressBar(`Uploading ${filePath} [:bar] ${filesize(data.fileSize)}`, {
               total: data.totalBlocks,
               width: 20
             });
