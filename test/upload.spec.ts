@@ -9,10 +9,10 @@ import { getAuth } from './utils';
 const filePath = path.join(__dirname, 'ReplaceWithLargeOne.avi');
 const folderUrl = 'Shared Documents'; // Web relative target folder
 
-describe(`pnp-upload tests`, () => {
+describe('pnp-upload tests', () => {
   for (const config of Environments) {
 
-    it(`should upload a document`, function(done: Mocha.Done): void {
+    it('should upload a document', function(done: Mocha.Done): void {
       this.timeout(30 * 1000);
       getAuth(config).then(async (context) => {
 
